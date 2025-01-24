@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Amida_OneClickBuy::management" sortOrder="100" title="One Click Buy Management"
+             module="Amida_OneClickBuy" parent="Magento_Sales::sales" resource="Amida_OneClickBuy::management"
+             translate="title" action="one_click_buy/oneclickbuy/index"/>
+    </menu>
+</config>

@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">one_click_buy_listing.one_click_buy_listing_data_source</item>
+            <item name="deps" xsi:type="string">one_click_buy_listing.one_click_buy_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="add">
+                <url path="*/*/new"/>
+                <class>primary</class>
+                <label translate="true">Add New</label>
+            </button>
+        </buttons>
+        <spinner>one_click_buy_listing_columns</spinner>
+        <deps>
+            <dep>one_click_buy_listing.one_click_buy_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="one_click_buy_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">entity_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>Amida_OneClickBuy::management</aclResource>
+        <dataProvider class="Amida\OneClickBuy\Ui\DataProvider\OneClickBuyDataProvider"
+                      name="one_click_buy_listing_data_source">
+            <settings>
+                <requestFieldName>entity_id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filterSearch name="fulltext"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="one_click_buy_listing_columns">
+        <column name="entity_id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>desc</sorting>
+            </settings>
+        </column>
+        <column name="product_sku">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Product Sku</label>
+            </settings>
+        </column>
+        <column name="phone_number">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Phone Number</label>
+            </settings>
+        </column>
+        <column name="date">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Date</label>
+            </settings>
+        </column>
+        <column name="timestamp">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Timestamp</label>
+            </settings>
+        </column>
+        <actionsColumn name="actions" class="Amida\OneClickBuy\Ui\Component\Listing\Column\OneClickBuyBlockActions">
+            <settings>
+                <indexField>entity_id</indexField>
+            </settings>
+        </actionsColumn>
+    </columns>
+</listing>

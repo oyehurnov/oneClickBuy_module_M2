@@ -1,0 +1,17 @@
+{
+  "amida_oneclickbuy_data": {
+    "column": {
+      "entity_id": true,
+      "product_sku": true,
+      "phone_number": true,
+      "date": true,
+      "timestamp": true
+    },
+    "index": {
+      "AMIDA_ONECLICKBUY_DATA_ENTITY_ID": true
+    },
+    "constraint": {
+      "PRIMARY": true
+    }
+  }
+}
