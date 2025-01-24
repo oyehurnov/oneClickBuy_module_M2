@@ -1,5 +1,5 @@
 {
-  "name": "amida/module-call-me",
+  "name": "amida/module-one-click-buy",
   "version": "1.0.0",
   "description": "N/A",
   "type": "magento2-module",
@@ -15,7 +15,7 @@
       "registration.php"
     ],
     "psr-4": {
-      "Amida\\CallMe\\": ""
+      "Amida\\OneClickBuy\\": ""
     }
   }
 }
