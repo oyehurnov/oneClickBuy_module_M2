@@ -1,0 +1,41 @@
+<?php
+/**
+ * @var $block Amida\OneClickBuy\Block\Catalog\Product\View\OneClickBuy;
+ */
+
+$isEnabled = $block->isEnabled();
+$product = $block->getCurrentProduct();
+?>
+<?php if ($isEnabled) { ?>
+<div>
+    <div id="buy-one-click-modal-content">
+        <div id="form-one-click-buy">
+            <form class="form" method="post">
+                <fieldset class="fieldset form-one-click-buy-fieldset">
+                    <label for="phone"><?php echo __('Phone number') ?></label>
+                    <input class="one-click-buy-phone"
+                           type="text" name="phones" id="phone"/>
+                </fieldset>
+            </form>
+        </div>
+        <div id="buy-one-click-modal-thanks" style="display: none">
+            <span><?php echo __('Thank you! We will contact you soon.') ?></span>
+        </div>
+        <div id="buy-one-click-modal-error" style="display: none">
+            <span><?php echo __('Sorry! We can not save your order at the moment. Please, try later.') ?></span>
+        </div>
+    </div>
+
+    <script type="text/x-magento-init">
+        {
+            "#buy-one-click-modal-content": {
+                "Amida_OneClickBuy/js/buy-one-click-modal": {
+                    "productSku": "<?php echo $block->getProductSku() ?>",
+                    "urlAjax" : "<?php echo $block->getUrl('amida/oneclickbuy/index', ['_secure' => true]) ?>",
+                    "title" : "<?php echo __('Buy in one click!') ?>"
+            }
+        }
+    }
+    </script>
+    <?php } ?>
+</div>

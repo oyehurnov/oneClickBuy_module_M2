@@ -1,0 +1,14 @@
+<?php
+/**
+ * @var $block Amida\OneClickBuy\Block\Catalog\Product\View\OneClickBuy;
+ */
+
+$isEnabled = $block->isEnabled();
+?>
+<?php if ($isEnabled) { ?>
+<div>
+    <button type="button"  id="buy-one-click-modal-button" >
+        <?php echo __('Buy in one click') ?>
+    </button>
+</div>
+<?php } ?>
