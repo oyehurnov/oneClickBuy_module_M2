@@ -72,18 +72,6 @@
                 <dataScope>phone_number</dataScope>
             </settings>
         </field>
-        <field name="date" sortOrder="20" formElement="input">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">date</item>
-                </item>
-            </argument>
-            <settings>
-                <dataType>string</dataType>
-                <label translate="true">Date</label>
-                <dataScope>date</dataScope>
-            </settings>
-        </field>
         <field name="timestamp" sortOrder="30" formElement="input">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">

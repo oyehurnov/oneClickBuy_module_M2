@@ -56,8 +56,7 @@ class Index extends Action
             $result['result_message'] = __("We can't submit your request, Please try again.");
             try {
                 $data = (array)$this->getRequest()->getPost();
-                $data['date'] = $this->datetime->date()->format('Y-m-d');
-                $data['timestamp'] = $this->datetime->date()->format('H:i:s');
+                $data['timestamp'] = $this->datetime->date()->format('Y-m-d H:i:s');
 
                 if ($data) {
                     $model = $this->oneClickBuyModelFactory->create();

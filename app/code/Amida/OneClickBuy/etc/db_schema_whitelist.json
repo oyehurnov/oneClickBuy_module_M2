@@ -4,7 +4,6 @@
       "entity_id": true,
       "product_sku": true,
       "phone_number": true,
-      "date": true,
       "timestamp": true
     },
     "index": {

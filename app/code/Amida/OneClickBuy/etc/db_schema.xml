@@ -6,7 +6,6 @@
                 comment="Entity Id Column"/>
         <column xsi:type="varchar" name="product_sku" nullable="false" length="255" comment="Product Sku Column"/>
         <column xsi:type="varchar" name="phone_number" nullable="false" length="255" comment="Phone Number Column"/>
-        <column xsi:type="date" name="date" nullable="false"/>
         <column xsi:type="timestamp" name="timestamp" nullable="false"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="entity_id"/>
